@@ -1,0 +1,3 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="CameraPicture" path="Android/data/com.cc.callcenter.callcenter/cache/" />
+</paths>
