@@ -5,6 +5,8 @@ import com.cc.callcenter.callcenter.retrofit.KullaniciRetrofit;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.List;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -37,5 +39,9 @@ public class KullaniciService {
 
     public KullaniciDto register(KullaniciDto kullaniciDto) throws Exception {
         return kullaniciRetrofit.register(kullaniciDto).execute().body();
+    }
+
+    public List<KullaniciDto> liste() throws Exception {
+        return kullaniciRetrofit.liste().execute().body();
     }
 }

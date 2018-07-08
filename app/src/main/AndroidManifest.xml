@@ -13,24 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity" ></activity>
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CameraActivity" />
+
         <provider
-            android:authorities="com.cc.callcenter.fileprovider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cc.callcenter.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fil_path" />
         </provider>
+
+        <activity android:name=".ListeActivity"></activity>
     </application>
 
 </manifest>

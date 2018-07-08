@@ -1,5 +1,7 @@
 package com.cc.callcenter.callcenter.retrofit;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -17,5 +19,8 @@ public interface KullaniciRetrofit {
 
     @POST("/kullanici/register")
     Call<KullaniciDto> register(@Body KullaniciDto kullaniciDto);
+
+    @GET("/kullanici/list")
+    Call<List<KullaniciDto>> liste();
 
 }
