@@ -23,7 +23,7 @@ public class ListeActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.liste_list);
         try {
             List<KullaniciDto> data = new KullaniciTask().execute().get();
-            ListeAdapter listeAdapter =new ListeAdapter(ListeActivity.this,R.layout.list_view,data);
+            ListeAdapter listeAdapter =new ListeAdapter(ListeActivity.this,data);
             listView.setAdapter(listeAdapter);
         }catch (Exception e){
             e.printStackTrace();
