@@ -34,7 +34,8 @@
                 android:resource="@xml/fil_path" />
         </provider>
 
-        <activity android:name=".ListeActivity"></activity>
+        <activity android:name=".ListeActivity" />
+        <activity android:name=".Veritabanictivity"></activity>
     </application>
 
 </manifest>

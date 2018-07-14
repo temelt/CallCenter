@@ -52,8 +52,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (!edtUsername.getText().toString().equals("") && !edtPassword.getText().toString().equals("")) {
-                        KullaniciTask t=new KullaniciTask();
+                    if (edtUsername.getText().toString().equals("a") && edtPassword.getText().toString().equals("a")) {
+                        /*KullaniciTask t=new KullaniciTask();
                         TaskParams[] taskParams =new TaskParams[1];
                         TaskParams p =new TaskParams();
                         p.setUsername(edtUsername.getText().toString());
@@ -69,7 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                             LoginActivity.this.finish();
                         } else {
                             System.out.println("Kullanıcı Adı veya Şifre Hatalı");
-                        }
+                        }*/
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("adSoyad","Test Kullanıcı");
+                        intent.putExtra("username","test");
+                        startActivity(intent);
+                        LoginActivity.this.finish();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
