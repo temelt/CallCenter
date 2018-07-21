@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -35,7 +36,9 @@
         </provider>
 
         <activity android:name=".ListeActivity" />
-        <activity android:name=".Veritabanictivity"></activity>
+        <activity android:name=".Veritabanictivity" />
+        <activity android:name=".KisiEkleActivity" />
+        <activity android:name=".SensorActivity"></activity>
     </application>
 
 </manifest>

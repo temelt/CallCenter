@@ -12,7 +12,7 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final String dbName = "callcenter";
-    private static final int dbVersion = 1;
+    private static final int dbVersion = 2;
 
     private static final String TBL_KISI = "kisi";
     private static final String TBL_KISI_ID = "id";
@@ -26,6 +26,8 @@ public class DbHelper extends SQLiteOpenHelper {
             TBL_KISI_SOYAD + " TEXT," +
             TBL_KISI_DOGUM_TARIHI + " DATETIME ) ";
 
+    private static final String UPGRADE_KISI=" alter table kisi add column adres text ";
+
 
     public DbHelper(Context ctx) {
         super(ctx, dbName, null, dbVersion);
@@ -38,7 +40,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL(UPGRADE_KISI);
     }
 
     public void save(Kisi k) {

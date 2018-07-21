@@ -1,11 +1,13 @@
 package com.cc.callcenter.callcenter;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.cc.callcenter.callcenter.adapter.ListeAdapter;
@@ -20,6 +22,7 @@ public class Veritabanictivity extends AppCompatActivity {
     DbHelper dbHelper ;
     ListView listView;
     Kisi seciliKisi;
+    Button btnKisiEkle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,15 @@ public class Veritabanictivity extends AppCompatActivity {
         setContentView(R.layout.activity_veritabani);
 
         dbHelper = new DbHelper(this);
+        btnKisiEkle = (Button) findViewById(R.id.btn_veritabani_ekle);
+
+        btnKisiEkle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Veritabanictivity.this,KisiEkleActivity.class);
+                startActivity(intent);
+            }
+        });
 
         listele();
 
@@ -69,4 +81,11 @@ public class Veritabanictivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listele();
+    }
+
 }

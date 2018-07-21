@@ -31,6 +31,7 @@ public class ListeActivity extends AppCompatActivity {
     }
 
 
+
     class KullaniciTask extends AsyncTask<Void, Void, List<KullaniciDto>> {
         @Override
         protected List<KullaniciDto> doInBackground(Void... params) {
