@@ -39,14 +39,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-                LoginActivity.this.finish();
-            }
-        });
+        btnRegister.setOnClickListener(new BtnRegisterClick());
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +87,16 @@ public class LoginActivity extends AppCompatActivity {
             } catch (Exception e) {
                 return null;
             }
+        }
+    }
+
+    class BtnRegisterClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            LoginActivity.this.finish();
         }
     }
 
